@@ -12,6 +12,7 @@ export class GameController implements interfaces.Controller {
     @httpGet('/:size')
     private getOne(@requestParam('size') size: number,  @response() resp: Response): any {
        try {
+           resp.status(200);
            return this.gameService.getSetOfCards(size);
        } catch (error) {
            resp.status(400).send(error.message);
