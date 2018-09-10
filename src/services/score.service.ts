@@ -13,7 +13,7 @@ export class ScoreService {
     public submitScore(scoreRequest: ScoreRequestModel) {
         if(!this.gameService.checkToken(scoreRequest.token)){
             throw new Error('Invalid token!');
-        } else if (scoreRequest.steps < 1|| scoreRequest.seconds < 1 ) {
+        } else if (scoreRequest.steps < 1 || scoreRequest.seconds < 1 ) {
             throw new Error('Steps and seconds can not be lower than 0!');
         }
 
