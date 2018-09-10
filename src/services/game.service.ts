@@ -39,6 +39,6 @@ export class GameService {
     }
 
     checkToken(token: string) {
-        return this.gameArray.find(game => game.token === token)? true: false;
+        return !!this.gameArray.find(game => game.token === token);
     }
 }
